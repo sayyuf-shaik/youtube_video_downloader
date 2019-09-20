@@ -22,4 +22,8 @@ class Download(object):
 
     @staticmethod
     def download_the_stream():
+        """
+        Downloads the streams
+        :return file_name: Downloaded file name
+        """
         return Download.get_streams()[0].download()
