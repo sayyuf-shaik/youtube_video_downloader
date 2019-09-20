@@ -8,6 +8,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from helpers import Download
+from helpers import global_constants
 
 
 class Ui_MainWindow(object):
@@ -60,6 +62,12 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "Submit"))
         self.label.setText(_translate("MainWindow", "Enter The URL"))
         self.pushButton_2.setText(_translate("MainWindow", "Download"))
+        self.pushButton_2.clicked.connect(self.download_clicked)
+
+    def download_clicked(self):
+        global_constants.DOWNLOAD_URL = self.lineEdit.text()
+        file_name = Download.Download.download_the_stream().split('/')[-1]
+        QtWidgets.QMessageBox.about(None, 'Downloaded', 'Successfully Downloaded {0}'.format(file_name))
 
 
 if __name__ == "__main__":
