@@ -105,3 +105,8 @@ venv.bak/
 
 # Pycharm Stuff
 .idea/
+# build and dist folders
+/build
+/dist
+*.mp4
+*.spec
