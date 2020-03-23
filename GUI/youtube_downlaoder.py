@@ -9,7 +9,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from helpers import Download
-from helpers import global_constants
+from helpers import global_vars
 
 
 class UiYoutubeDownloader(QtWidgets.QMainWindow):
@@ -70,7 +70,7 @@ class UiYoutubeDownloader(QtWidgets.QMainWindow):
         self.pushButton_2.clicked.connect(self.download_clicked)
 
     def download_clicked(self):
-        global_constants.DOWNLOAD_URL = self.lineEdit.text()
+        global_vars.DOWNLOAD_URL = self.lineEdit.text()
         self.progress.setValue(0)
         file_name = self.download.download_the_stream().split('/')[-1]
         QtWidgets.QMessageBox.about(None, 'Downloaded', 'Successfully Downloaded {0}'.format(file_name))

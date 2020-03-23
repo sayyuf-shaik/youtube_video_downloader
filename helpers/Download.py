@@ -1,5 +1,5 @@
 import pytube
-import helpers.global_constants as global_obj
+import helpers.global_vars as global_obj
 
 
 class Download(object):
